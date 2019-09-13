@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -A b1021                # Allocation
+#SBATCH -p buyin                # Queue
+#SBATCH -t 40:00:00             # Walltime/duration of the job
+#SBATCH -N  1                   # Number of Nodes
+#SBATCH --ntasks-per-node=20    # Number of Cores (Processors)
+#SBATCH --output=outlog         # Path for output must already exist
+#SBATCH --error=errlog          # Path for errors must already exist
+#SBATCH --job-name="bilayer"    # Name of job
+
+source /projects/b1021/Felipe/programs/bin/GMXRC
+
+gmx grompp -f tmp1.mdp -c minimised.gro  -p c16k1.top -o c16k1_md.tpr 
+gmx mdrun -ntmpi  12   -s c16k1_md.tpr -o c16k1_md_tmp1 -x c16k1_md_tmp1 -c c16k1_md_tmpd1.gro
+
