@@ -1,0 +1,39 @@
+;;;;;; Martini lipid topology for C16K1 (edited by JOSEPH MCCOURT, SEE martini_lipid.itp) September 9, 2019
+;
+; LYSINE MAPPING: "MARTII Coarse-Grained Force Field: Extension to Proteins," Monticelli et al., JCTC
+; For the c16k1_edit.gro file, used these atoms in original c16k1.gro file
+;    0         O    2   1.222   0.132  -0.099
+;    0         N    5   1.072  -0.156   0.069
+;    0         C    8  -0.425  -0.033  -0.014
+;    0         C    9  -0.801   0.045   0.017
+;    0         C   15  -1.175  -0.042  -0.015
+;    0         C   26  -1.551   0.036   0.016
+
+
+[ moleculetype ]
+; molname      nrexcl
+  C16K1        2
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+  1 	Qd 	1 	C16K1 	COO 	1       1
+  2 	C1 	1 	C16K1 	C1  	2 	0 
+  3 	C1 	1 	C16K1 	C2  	3 	0 
+  4 	C1 	1 	C16K1 	C3  	4 	0 
+  5 	C1 	1 	C16K1 	C4  	5 	0 
+  6     C3      1      	C16K1	C01	6	0
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+  1  2 	1 	0.47 	1250
+  2  3 	1 	0.47 	1250
+  3  4 	1 	0.47 	1250
+  4  5 	1 	0.47 	1250
+  1  6	1	0.33	5000
+  
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  1  2  3 	2 	180.0 	25.0 
+  2  3  4 	2 	180.0 	25.0 
+  3  4  5 	2 	180.0 	25.0 
+  6  1	2	2	180.0   25.0
